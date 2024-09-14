@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: gray;
+}
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+}
+.bg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  padding: 3rem;
+  animation: rotator 15s linear infinite;
+  overflow: hidden;
+}
+.ball {
+  position: absolute;
+  border-radius: 50%;
+}
+.ball1 {
+  width: 40px;
+  aspect-ratio: 1/1;
+  background: orangered;
+
+  left: 5rem;
+  animation: translate2 10s infinite linear;
+}
+.ball2 {
+  width: 60px;
+  aspect-ratio: 1/1;
+  background: gold;
+  bottom: 60px;
+  right: 90px;
+  animation: translate 8s infinite linear;
+}
+@keyframes rotator {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes translate2 {
+  0% {
+    bottom: 15%;
+    left: 10%;
+  }
+  25% {
+    bottom: 90%;
+    left: 63%;
+  }
+  50% {
+    bottom: 44%;
+    left: 34%;
+  }
+  75% {
+    bottom: 34%;
+    left: 20%;
+  }
+  100% {
+    bottom: 15%;
+    left: 10%;
+  }
+}
+
+@keyframes translate {
+  0% {
+    bottom: 2%;
+    left: 10%;
+  }
+  25% {
+    bottom: 10%;
+    left: 40%;
+  }
+  50% {
+    bottom: 40%;
+    left: 80%;
+  }
+  75% {
+    bottom: 80%;
+    left: 30%;
+  }
+  100% {
+    bottom: 2%;
+    left: 10%;
+  }
+}
+
+main {
+  width: auto;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calcBody {
+  background: rgba(128, 128, 128, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 40px 2px white;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.display {
+  background: #c9c9c9;
+  height: 4rem;
+  width: 80%;
+  border-radius: 5px;
+  /* border: 1px solid; */
+  /* margin: auto; */
+  margin: 2rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.display span {
+  padding: 0 5px;
+  font-size: 2rem;
+}
+.buttons {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+button {
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  cursor: pointer;
+
+  background: #aeaeae;
+  box-shadow: 2px 2px 10px #5a5858, -2px -2px 15px #d2cccc;
+  transition: all 30ms ease-in-out;
+}
+button:hover {
+  background: #c9c9c9;
+}
+button:active {
+  background: #ffffff;
+  scale: 0.9;
+  box-shadow: 0;
+}
+.btn-19 {
+  grid-column: 3/5;
+}
