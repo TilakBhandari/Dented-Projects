@@ -1,10 +1,10 @@
-let btn = document.querySelector("button");
 let display = document.querySelector(".display span");
+let displayArea = document.querySelector(".display");
 
 display.innerText = "";
 
 function ToDisplay(btn) {
-  if (display.innerText == "ERROR") {
+  if (display.innerText == "error") {
     ac();
   }
   display.innerText += `${btn}`;
@@ -42,17 +42,15 @@ function operator(ope) {
 // ----------------function for solving ---------
 function solve() {
   let len = display.innerText.length;
-  // if (display.innerText == "/" || "+" || "*" || "-" || "%") {
-  //   display.innerText = "ERROR";
-  // }
+  errorThrow();
   if (nonrepeat.includes(display.innerText[len - 1])) {
     c();
   }
   try {
     display.innerText = eval(display.innerText);
+    errorThrow();
   } catch (error) {
     display.innerText = "ERROR";
-    isplay.style.background = "red";
   }
 }
 
@@ -107,7 +105,7 @@ function percentile() {
         break;
 
       default:
-        answer = 100 / numAfter;
+        answer = numAfter / 100;
     }
     console.log(answer);
     display.innerText = answer;
@@ -119,6 +117,4 @@ function percentile() {
 // -----------------------Adding Prank ELements ----------------------
 
 // ---------let's make  error effect-------------
-
-if (display.innerText == "ERROR") {
-}
+//
