@@ -143,3 +143,23 @@ function prank() {
     errorEffect();
   }
 }
+
+// ----------------------adding keypress event listenere ------------------
+
+document.addEventListener("keypress", (evnt) => {
+  console.log(evnt);
+  if (evnt.code.includes("Key")) {
+    // console.log(evnt.key);
+    return;
+  }
+  if (evnt.key == "Enter") {
+    solve();
+    // console.log(evnt.key);
+    return;
+  }
+  if (!evnt.code.includes("Key")) {
+    ToDisplay(evnt.key);
+    // console.log(evnt.key);
+    return;
+  }
+});
